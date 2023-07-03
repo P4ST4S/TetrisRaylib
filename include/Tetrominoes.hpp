@@ -13,12 +13,23 @@
 
 class Tetromino {
 public:
+    enum class Rotation {
+        UP,
+        RIGHT,
+        DOWN,
+        LEFT
+    };
+
+public:
     Tetromino(const bool* shape, int dimension, Color color, const Board& board);
 
     void Draw() const;
+    void RotateClockwise();
+    void RotateCounterClockwise();
 
 private:
     Vec2<int> boardPos;
+    Rotation currentRotation;
     const bool* shape;
     const int dimension;
     const Color color;
