@@ -5,8 +5,9 @@ int main()
 {
     const int screenWidth = 800;
     const int screenHeight = 450;
+    const int fps = 60;
 
-    Game game{screenWidth, screenHeight, "Tetris Raylib"};
+    Game game{screenWidth, screenHeight, fps,  "Tetris Raylib"};
 
     while (!game.GameShouldClose())
         game.Tick();

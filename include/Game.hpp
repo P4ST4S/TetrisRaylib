@@ -10,7 +10,7 @@
 
 class Game {
 public:
-    Game(int width, int height, const std::string& title);
+    Game(int width, int height, int fps, const std::string& title);
     Game(const Game& other) = delete;
     Game& operator=(const Game& other) = delete;
     ~Game() noexcept;
