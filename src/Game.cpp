@@ -3,10 +3,13 @@
 //
 
 #include "../include/Game.hpp"
+#include "../include/Settings.hpp"
 #include <raylib.h>
 #include <cassert>
 
-Game::Game(int width, int height, int fps, const std::string& title) : board({200, 200}, {10, 20}, 15, 2)
+Game::Game(int width, int height, int fps, const std::string& title) :
+board(settings::boardPosition, settings::boardWidthHeight,
+      settings::cellSize, settings::padding)
 {
     assert(!IsWindowReady());
     SetTargetFPS(fps);

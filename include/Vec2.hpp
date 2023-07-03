@@ -9,59 +9,59 @@ template <typename T>
 class Vec2 {
 public:
     Vec2() = default;
-    Vec2(T x_in, T y_in) : x(x_in), y(y_in) {}
+    constexpr Vec2(T x, T y) : x(x), y(y) {}
 
-    T GetX() const { return x; };
-    T GetY() const { return y; };
+    constexpr T GetX() const { return x; };
+    constexpr T GetY() const { return y; };
 
-    void SetX(T x_in) { x = x_in; };
-    void SetY(T y_in) { y = y_in; };
+    constexpr void SetX(T x_in) { x = x_in; };
+    constexpr void SetY(T y_in) { y = y_in; };
 
 public:
-    bool operator==(const Vec2& rhs)
+    constexpr bool operator==(const Vec2& rhs)
     {
         return (x == rhs.x && y == rhs.y);
     }
-    bool operator!=(const Vec2& rhs)
+    constexpr bool operator!=(const Vec2& rhs)
     {
         return *this != rhs;
     }
 
-    Vec2 operator+(const Vec2& rhs) const
+    constexpr Vec2 operator+(const Vec2& rhs) const
     {
         return {x + rhs.x, y + rhs.y};
     }
-    Vec2 operator+(const int rhs) const
+    constexpr Vec2 operator+(const int rhs) const
     {
         return {x + rhs, y + rhs};
     }
-    Vec2& operator+=(const Vec2 rhs)
+    constexpr Vec2& operator+=(const Vec2 rhs)
     {
         return *this = *this + rhs;
     }
 
-    Vec2 operator-(const Vec2& rhs) const
+    constexpr Vec2 operator-(const Vec2& rhs) const
     {
         return {x - rhs.x, y - rhs.y};
     }
-    Vec2 operator-(const int rhs) const
+    constexpr Vec2 operator-(const int rhs) const
     {
         return {x - rhs, y - rhs};
     }
-    Vec2& operator-=(const Vec2 rhs)
+    constexpr Vec2& operator-=(const Vec2 rhs)
     {
         return *this = *this - rhs;
     }
 
-    Vec2 operator*(const Vec2& rhs) const
+    constexpr Vec2 operator*(const Vec2& rhs) const
     {
         return {x * rhs.x, y * rhs.y};
     }
-    Vec2 operator*(const int rhs) const
+    constexpr Vec2 operator*(const int rhs) const
     {
         return {x * rhs, y * rhs};
     }
-    Vec2& operator*=(const Vec2 rhs)
+    constexpr Vec2& operator*=(const Vec2 rhs)
     {
         return *this = *this * rhs;
     }

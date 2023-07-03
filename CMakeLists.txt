@@ -25,7 +25,7 @@ endif()
 
 # Our Project
 
-add_executable(${PROJECT_NAME} WIN32 main.cpp src/Game.cpp include/Game.hpp src/Board.cpp include/Board.hpp include/Vec2.hpp src/raylibCpp.cpp include/raylibCpp.hpp)
+add_executable(${PROJECT_NAME} WIN32 main.cpp src/Game.cpp include/Game.hpp src/Board.cpp include/Board.hpp include/Vec2.hpp src/raylibCpp.cpp include/raylibCpp.hpp include/Settings.hpp)
 target_link_libraries(${PROJECT_NAME} raylib)
 
 # Add a custom target for cleaning the build
