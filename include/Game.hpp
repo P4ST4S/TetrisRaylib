@@ -7,8 +7,12 @@
 
 
 #include <string>
+#include <raylib.h>
+#include <cassert>
 
+#include "Settings.hpp"
 #include "Board.hpp"
+#include "Tetrominoes.hpp"
 
 class Game {
 public:
@@ -26,6 +30,7 @@ private:
     void Update();
 
     Board board;
+    Jay tetromino;
 };
 
 
