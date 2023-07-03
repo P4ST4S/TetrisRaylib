@@ -8,6 +8,8 @@
 
 #include <string>
 
+#include "Board.hpp"
+
 class Game {
 public:
     Game(int width, int height, int fps, const std::string& title);
@@ -22,6 +24,8 @@ public:
 private:
     void Draw();
     void Update();
+
+    Board board;
 };
 
 

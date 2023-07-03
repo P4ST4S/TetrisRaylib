@@ -4,13 +4,16 @@
 
 #include "../include/Game.hpp"
 #include <raylib.h>
-#include <assert.h>
+#include <cassert>
 
-Game::Game(int width, int height, int fps, const std::string& title)
+Game::Game(int width, int height, int fps, const std::string& title) : board({200, 200}, {10, 20}, 15, 2)
 {
     assert(!IsWindowReady());
     SetTargetFPS(fps);
     InitWindow(width, height, title.c_str());
+    for (int iY = 0; iY < 20; iY++)
+        for (int iX = 0; iX < 10; iX++)
+            board.SetCell({iX, iY}, RED);
 }
 Game::~Game() noexcept {
     assert(IsWindowReady());
@@ -32,7 +35,8 @@ void Game::Tick()
 
 void Game::Draw()
 {
-    ClearBackground(RAYWHITE);
+    ClearBackground(BLACK);
+    board.Draw();
 }
 
 void Game::Update()
